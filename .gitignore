@@ -3,3 +3,6 @@ artifacts/
 cache/
 recordings/
 .env
+
+# Local Netlify folder
+.netlify
