@@ -4,19 +4,27 @@ async function main() {
     const [deployer] = await hre.ethers.getSigners();
     console.log("Deploying contracts with the account:", deployer.address);
 
-    // 1. First, deploy a Mock Uniswap V2 Factory and Router since we are on a clean local EVM
-    const MockFactory = await hre.ethers.getContractFactory("MockUniswapV2Factory");
-    const mockFactory = await MockFactory.deploy(deployer.address);
-    await mockFactory.deployed();
+    let routerAddress;
 
-    const MockRouter = await hre.ethers.getContractFactory("MockUniswapV2Router02");
-    const mockRouter = await MockRouter.deploy(mockFactory.address, deployer.address);
-    await mockRouter.deployed();
-    console.log("Mock Uniswap V2 environment deployed locally");
+    if (hre.network.name === "bsc") {
+        routerAddress = "0x10ED43C718714eb63d5aA57B78B54704E256024E"; // PancakeSwap V2 Router Mainnet
+        console.log("Using BSC Mainnet PancakeSwap Router:", routerAddress);
+    } else {
+        // 1. First, deploy a Mock Uniswap V2 Factory and Router since we are on a clean local EVM
+        const MockFactory = await hre.ethers.getContractFactory("MockUniswapV2Factory");
+        const mockFactory = await MockFactory.deploy(deployer.address);
+        await mockFactory.deployed();
+
+        const MockRouter = await hre.ethers.getContractFactory("MockUniswapV2Router02");
+        const mockRouter = await MockRouter.deploy(mockFactory.address, deployer.address);
+        await mockRouter.deployed();
+        console.log("Mock Uniswap V2 environment deployed locally");
+        routerAddress = mockRouter.address;
+    }
 
     // 2. Deploy 12M Token
     const Token = await hre.ethers.getContractFactory("TwelveMToken");
-    const token = await Token.deploy(deployer.address, deployer.address, mockRouter.address);
+    const token = await Token.deploy(deployer.address, deployer.address, routerAddress);
     await token.deployed();
     console.log("-----------------------------------------");
     console.log("TwelveMToken deployed to:", token.address);

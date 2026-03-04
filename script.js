@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Countdown Timer Logic
     // Set for a hypothetical future date (e.g., start of IPL tournament or ICO end)
-    const countDownDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000); // 7 days from now
+    const countDownDate = new Date().getTime() + (0 * 24 * 60 * 60 * 1000); // 0 days from now
 
     const timerInterval = setInterval(function () {
         const now = new Date().getTime();
