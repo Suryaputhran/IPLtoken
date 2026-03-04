@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12M Token | The Zero-Risk Fan Dividend</title>
+    <meta name="description"
+        content="Support-to-Earn: Buy your team's digital jersey. Get paid crypto every time they win. The ultimate IPL Web3 Fan Experience.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://12mtoken.com/">
+    <meta property="og:title" content="12M Token | The Zero-Risk Fan Dividend">
+    <meta property="og:description"
+        content="Support-to-Earn: Buy your team's digital jersey. Get paid crypto every time they win. The ultimate IPL Web3 Fan Experience.">
+    <meta property="og:image" content="https://12mtoken.com/assets/banner_preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://12mtoken.com/">
+    <meta property="twitter:title" content="12M Token | The Zero-Risk Fan Dividend">
+    <meta property="twitter:description"
+        content="Support-to-Earn: Buy your team's digital jersey. Get paid crypto every time they win. The ultimate IPL Web3 Fan Experience.">
+    <meta property="twitter:image" content="https://12mtoken.com/assets/banner_preview.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Live Payout Ticker -->
+    <div class="payout-ticker-container">
+        <div class="payout-ticker">
+            <span class="ticker-item">🏏 0x8F2a...77b just received 5,000 $12M (CSK Win Bonus)</span>
+            <span class="ticker-item">🔥 Treasury Wallet burned 100,000 $12M</span>
+            <span class="ticker-item">💰 0x11Ac...900 bought 50,000 $12M</span>
+            <span class="ticker-item">🏏 0x8F2a...77b just received 5,000 $12M (CSK Win Bonus)</span>
+        </div>
+    </div>
+
+    <div class="animated-bg">
+        <div class="glow-bg"></div>
+        <div class="glow-bg-2"></div>
+        <div class="glow-bg-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">12M <span class="accent">Token</span></a>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#teams">Team Cards</a>
+            </div>
+            <a href="#" id="navLoginBtn" class="btn btn-primary cta-nav">Login & Connect</a>
+            <div class="menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-content">
+                <div class="badge fade-in">🔥 The Future of IPL Fandom</div>
+                <h1 class="glitch" data-text="SUPPORT">SUPPORT.<br><span class="accent">EARN.</span><br>REPEAT.</h1>
+                <p class="subtitle">Introducing the <strong>Zero-Risk Fan Dividend</strong>. <br>Mint your favorite IPL
+                    Player's digital card. Every time they score a boundary or their team wins, you earn crypto
+                    instantly.</p>
+
+                <div class="hero-cta-group">
+                    <a href="https://www.pinksale.finance/" target="_blank" class="btn btn-primary btn-large">Buy $12M
+                        Presale (PinkSale)</a>
+                    <a href="#how-it-works" class="btn btn-outline btn-large">Read the Docs</a>
+                    <button id="shareOnXBtn" class="btn"
+                        style="background: #000; color: #fff; width: 100%; max-width: 250px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        Share on X to Earn
+                    </button>
+                </div>
+
+                <div class="presale-status-card glass-panel">
+                    <div class="status-header">
+                        <h3>Presale Stage 1 <span class="live-ping"></span></h3>
+                        <span class="progress-text">65% Filled</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <div class="countdown" id="countdownTimer">
+                        <div class="time-block"><span id="days">00</span><small>Days</small></div>:
+                        <div class="time-block"><span id="hours">00</span><small>Hours</small></div>:
+                        <div class="time-block"><span id="minutes">00</span><small>Mins</small></div>:
+                        <div class="time-block"><span id="seconds">00</span><small>Secs</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <!-- 3D Player Cards -->
+                    <div class="nft-card card-1 glass-panel">
+                        <div class="card-image bg-yellow"
+                            style="background-image: url('assets/ms_dhoni.png'); background-size: cover; background-position: center;">
+                        </div>
+                        <div class="card-details">
+                            <h4>MS Dhoni</h4>
+                            <p class="yield-tag">Base: CSK | Per 6: 500 $12M</p>
+                        </div>
+                    </div>
+                    <div class="nft-card card-2 glass-panel">
+                        <div class="card-image bg-red"
+                            style="background-image: url('assets/virat_kohli.png'); background-size: cover; background-position: center;">
+                        </div>
+                        <div class="card-details">
+                            <h4>Virat Kohli</h4>
+                            <p class="yield-tag">Base: RCB | Per 50: 2000 $12M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="how-it-works" class="how-it-works fade-in-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>The <span>Zero-Risk</span> Playbook</h2>
+                <p>No crypto knowledge required. Just pure cricket loyalty.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card glass-panel interactive">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">🏏</div>
+                    <h3>Buy $12M</h3>
+                    <p>Log in with Google or Phone Number to securely buy your $12M tokens via our PinkSale launch.</p>
+                </div>
+                <div class="step-card glass-panel interactive">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">📺</div>
+                    <h3>Mint a Player Card</h3>
+                    <p>Use your tokens to mint legendary Digital Player Cards (e.g., Virat Kohli, MS Dhoni, Rohit
+                        Sharma).</p>
+                </div>
+                <div class="step-card glass-panel interactive highlight-border">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">💰</div>
+                    <h3>Earn Dividends</h3>
+                    <p>Earn instant $12M payouts from the Treasury when your player hits a 6, takes a wicket, or their
+                        team wins the match. Zero risk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="teams" class="featured-teams fade-in-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>The 2026 <span class="accent">Rosters</span></h2>
+                <p>Mint a Player Card from any of the 10 franchises. Support your favorite playing 11.</p>
+            </div>
+
+            <div class="team-filter-tabs" id="teamFilterTabs">
+                <button class="filter-btn active" data-filter="CSK">CSK</button>
+                <button class="filter-btn" data-filter="MI">MI</button>
+                <button class="filter-btn" data-filter="RCB">RCB</button>
+                <button class="filter-btn" data-filter="KKR">KKR</button>
+                <button class="filter-btn" data-filter="SRH">SRH</button>
+                <button class="filter-btn" data-filter="RR">RR</button>
+                <button class="filter-btn" data-filter="DC">DC</button>
+                <button class="filter-btn" data-filter="GT">GT</button>
+                <button class="filter-btn" data-filter="PBKS">PBKS</button>
+                <button class="filter-btn" data-filter="LSG">LSG</button>
+            </div>
+
+            <div class="teams-grid" id="playerGrid">
+                <!-- Javascript will dynamically inject the Player Cards here based on the selected Team Tab -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculate Your Yield Simulator -->
+    <section id="calculator" class="yield-calculator fade-in-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Calculate Your <span class="accent">Yield</span></h2>
+                <p>Real-time simulation of $12M payouts per match win.</p>
+            </div>
+
+            <div class="calculator-panel glass-panel split-layout">
+                <div class="calc-controls">
+                    <label for="investment">Your Investment: <span id="investAmountText"
+                            class="accent">$500</span></label>
+                    <input type="range" id="investmentSlider" min="50" max="10000" step="50" value="500">
+
+                    <label class="mt-2" for="teamSelect">Select Your Player Card:</label>
+                    <select id="teamSelect" class="custom-select">
+                        <!-- Options are dynamically populated from all 110 players in script.js -->
+                    </select>
+                </div>
+
+                <div class="calc-results text-center">
+                    <h3>Estimated <span class="accent">Payout per Win</span></h3>
+                    <div class="huge-number" id="estimatedPayout">$75.00</div>
+                    <p class="text-muted">Paid instantly in $12M tokens directly to your wallet</p>
+
+                    <div class="total-roi mt-2">
+                        <span class="small-caps">Est. Tournament ROI (if they reach finals):</span>
+                        <div class="roi-number text-green" id="totalROI">150%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Match Simulator -->
+    <section id="simulator" class="match-simulator fade-in-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Live Match <span class="accent">Simulator</span></h2>
+                <p>See the Support-to-Earn mechanism in action.</p>
+            </div>
+
+            <div class="sim-dashboard glass-panel">
+                <div class="sim-teams">
+                    <div class="sim-team">
+                        <img id="simPlayerImg" src="assets/generic_player.png" alt="Random Player"
+                            style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--accent-primary); margin-bottom: 10px; object-fit: cover; background: rgba(255,255,255,0.05);">
+                        <h3 id="simPlayerName">Select a Player</h3>
+                        <div class="score" id="score1" style="font-size: 2rem;">0 Runs</div>
+                    </div>
+                </div>
+
+                <div class="sim-controls text-center mt-2">
+                    <button id="simBtn" class="btn btn-primary btn-large shimmer-effect">Simulate Player
+                        Innings</button>
+                    <div id="simResult" class="sim-result mt-2" style="min-height: 60px;"></div>
+                </div>
+
+                <div class="sim-wallet text-center mt-4">
+                    <span class="small-caps">Your $12M Dividend Earnings</span>
+                    <div class="wallet-balance" id="demoWallet">0 <small>$12M</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="virality" class="virality-features full-width fade-in-section">
+        <div class="container split-layout">
+            <div class="feature-text">
+                <h2>Rivalry <span class="accent">Clashes</span></h2>
+                <p>Cricket is better with rivals. Challenge your friends to a "Clash."</p>
+                <ul>
+                    <li>Link your card against a friend's opposing card.</li>
+                    <li>Winner takes a 2x bonus dividend!</li>
+                    <li>Massive bragging rights permanently recorded on-chain.</li>
+                </ul>
+                <br>
+                <h2>The <span class="gold-text">Championship Yield</span></h2>
+                <p>Holding the Fan Card of the team that wins the entire IPL Final? You hit the Jackpot. A massive
+                    portion of the treasury is designated as the Mega Dividend for the ultimate loyal fans at the end of
+                    the season.</p>
+            </div>
+            <div class="feature-visual">
+                <div class="clash-visual" style="border-color: rgba(255, 215, 0, 0.3); cursor: pointer;"
+                    id="triggerClashBtn">
+                    <div class="team-vs text-yellow">CSK</div>
+                    <div class="vs-text shimmer-effect"
+                        style="background: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">VS (Click to
+                        Clash!)</div>
+                    <div class="team-vs text-blue" style="color: #00B1E1;">LSG</div>
+                </div>
+                <!-- Mini Clash simulator result -->
+                <div id="clashResultModal" class="glass-panel text-center"
+                    style="display: none; margin-top: 20px; border: 2px solid var(--accent-primary); animation: glow 2s infinite;">
+                    <h3 class="text-yellow">CSK Wins!</h3>
+                    <p style="font-size: 0.9rem;" class="mt-2 text-muted">Smart Contract detected match outcome.</p>
+                    <div class="mt-2 text-green" style="font-weight: bold; font-size: 1.2rem;">+ 10,000 $12M (2x Rivalry
+                        Bonus)</div>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Transferred to CSK Cardholder Wallet</p>
+                </div>
+                <div class="clash-visual mt-2" style="border-color: rgba(0, 90, 156, 0.3);">
+                    <div class="team-vs text-blue">MI</div>
+                    <div class="vs-text">VS</div>
+                    <div class="team-vs text-red">RCB</div>
+                </div>
+                <div class="clash-visual mt-2" style="border-color: rgba(242, 101, 34, 0.3);">
+                    <div class="team-vs text-orange">SRH</div>
+                    <div class="vs-text">VS</div>
+                    <div class="team-vs text-purple">KKR</div>
+                </div>
+                <div class="clash-visual mt-2" style="border-color: rgba(234, 26, 133, 0.3);">
+                    <div class="team-vs" style="color: #EA1A85;">RR</div>
+                    <div class="vs-text">VS</div>
+                    <div class="team-vs text-blue">DC</div>
+                </div>
+                <div class="clash-visual mt-2" style="border-color: rgba(237, 27, 36, 0.3);">
+                    <div class="team-vs" style="color: #ED1B24;">PBKS</div>
+                    <div class="vs-text">VS</div>
+                    <div class="team-vs" style="color: #8c8f91;">GT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Roadmap Timeline -->
+    <section id="roadmap" class="roadmap fade-in-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Path to the <span class="gold-text">Jackpot</span></h2>
+                <p>The timeline from Presale to the Mega Dividend.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Phase 1: Token Presale & Card Minting</h3>
+                        <p>Buy $12M tokens on PinkSale. Instantly head to the dApp to connect your wallet and mint your
+                            favorite Player Cards before the real-world games start.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel">
+                        <h3>Phase 2: The IPL Begins</h3>
+                        <p>Real-world matches start. For every boundary or win, Fan Card holders receive automated Yield
+                            from the
+                            Treasury.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel highlight-border">
+                        <h3>Phase 3: The Championship Yield</h3>
+                        <p>The team that wins the IPL Final triggers the Mega Dividend for its loyal holders. Massive
+                            payout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics" class="tokenomics fade-in-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>12M <span class="accent">Tokenomics</span></h2>
+                <p>Built on Binance Smart Chain (BEP-20) for zero-friction mass adoption.</p>
+            </div>
+
+            <div class="token-grid">
+                <div class="token-stats glass-panel">
+                    <div class="stat-row">
+                        <span class="label">Total Supply</span>
+                        <span class="value">1,000,000,000</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Network</span>
+                        <span class="value">BSC (BEP-20)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Ticker</span>
+                        <span class="value">$12M</span>
+                    </div>
+                </div>
+
+                <div class="allocation-chart glass-panel">
+                    <h3>Allocation</h3>
+                    <div class="allocation-item">
+                        <div class="bar-label"><span>ICO / Presale</span> <span>40%</span></div>
+                        <div class="bar-bg">
+                            <div class="bar-fill color-1" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="bar-label"><span>Yield Treasury (Rewards)</span> <span>30%</span></div>
+                        <div class="bar-bg">
+                            <div class="bar-fill color-2" style="width: 30%"></div>
+                        </div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="bar-label"><span>Liquidity Pool (DEX)</span> <span>10%</span></div>
+                        <div class="bar-bg">
+                            <div class="bar-fill color-3" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="bar-label"><span>Marketing & Influencers</span> <span>10%</span></div>
+                        <div class="bar-bg">
+                            <div class="bar-fill color-4" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="bar-label"><span>Team (Vested)</span> <span>10%</span></div>
+                        <div class="bar-bg">
+                            <div class="bar-fill color-5" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lock-up & Vesting Info Panel -->
+            <div class="vesting-panel glass-panel mt-4" style="padding: 2.5rem;">
+                <h3 class="text-center" style="margin-bottom: 2rem;">Security & <span class="accent">Vesting</span>
+                    Metrics</h3>
+                <div class="split-layout">
+                    <div class="vesting-card">
+                        <h4>🔒 Team & Advisor Lock-Up</h4>
+                        <p class="text-muted mt-2 text-sm">To ensure long-term commitment directly aligning with the IPL
+                            season and beyond:</p>
+                        <ul class="text-sm mt-2" style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.5rem;"><strong class="text-main">Cliff Period:</strong> 3 Months
+                                (No tokens unlocked during the core IPL tournament).</li>
+                            <li style="margin-bottom: 0.5rem;"><strong class="text-main">Vesting Schedule:</strong>
+                                Linear daily vesting over 12 months post-cliff.</li>
+                        </ul>
+                    </div>
+                    <div class="vesting-card">
+                        <h4>💧 PinkSale Liquidity Lock</h4>
+                        <p class="text-muted mt-2 text-sm">Protecting the community from rug-pulls and sudden dumps:</p>
+                        <ul class="text-sm mt-2" style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.5rem;"><strong class="text-main">DEX Liquidity:</strong> Minimum
+                                51% of raised presale funds automatically locked via PinkLock.</li>
+                            <li style="margin-bottom: 0.5rem;"><strong class="text-main">Lock Duration:</strong> 365
+                                Days. Automatically bound via audited smart contract.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <p class="small-caps" style="color: var(--accent-secondary);">Investor Presale Tokens are <strong
+                            style="color: var(--text-main);">100% Unlocked at TGE</strong> (Token Generation Event) to
+                        allow immediate Player Card Minting.</p>
+                </div>
+            </div>
+
+            <div class="tax-info text-center mt-4">
+                <p class="small-caps">Deflationary Core: 5% Tax on DEX Trades</p>
+                <div class="tax-split mt-2">
+                    <span>2% to Treasury</span> | <span>2% to Marketing</span> | <span class="text-red">1% BURNED
+                        🔥</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <h2>Ready to become the <span class="accent">12th Man?</span></h2>
+            <a href="https://www.pinksale.finance/" target="_blank" class="btn btn-primary btn-large mt-2">Join the
+                Presale Now (PinkSale)</a>
+            <div class="footer-links mt-4">
+                <a href="https://x.com/12mtoken" target="_blank">Twitter/X</a>
+                <a href="https://t.me/+pX5VLH5XBlpmYzVk" target="_blank">Telegram</a>
+                <a href="#how-it-works">Whitepaper</a>
+                <a href="https://bscscan.com/" target="_blank">Contract</a>
+            </div>
+            <p class="copyright mt-2">© 2026 12M Token. Cryptocurrency investments carry risk. Not officially affiliated
+                with the BCCI or IPL.</p>
+        </div>
+    </footer>
+
+    <!-- Login & Connect Wallet Modal -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-header text-center">
+                <h2>Join the <span class="accent">12th Man</span></h2>
+                <p>Log in with Social or Web3 Wallet to continue</p>
+            </div>
+
+            <div class="login-options mt-2">
+                <!-- Social/Web2 Login -->
+                <button class="auth-btn social-btn google-btn border-focus">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                    Continue with Google
+                </button>
+                <button class="auth-btn social-btn phone-btn border-focus">
+                    📱 Continue with Phone Number
+                </button>
+
+                <div class="divider"><span>OR</span></div>
+
+                <!-- Web3 Wallets -->
+                <button class="auth-btn crypto-btn metamask-btn border-focus">
+                    🦊 Connect MetaMask
+                </button>
+                <button class="auth-btn crypto-btn walletconnect-btn border-focus">
+                    🔗 WalletConnect
+                </button>
+            </div>
+            <p class="text-center text-muted" style="margin-top: 1.5rem; font-size: 0.8rem;">
+                By connecting a wallet, you agree to our Terms of Service and Privacy Policy.
+            </p>
+        </div>
+    </div>
+
+    <script src="vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
