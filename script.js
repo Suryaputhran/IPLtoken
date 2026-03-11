@@ -19,30 +19,78 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(element);
     });
 
-    // Countdown Timer Logic
-    // Set for a hypothetical future date (e.g., start of IPL tournament or ICO end)
-    const countDownDate = new Date().getTime() + (0 * 24 * 60 * 60 * 1000); // 0 days from now
+    // Countdown Timer & Live PinkSale Data Logic
+    const countDownDate = new Date().getTime() + (0 * 24 * 60 * 60 * 1000); // 0 days from now (Ended)
+
+    // Elements
+    const presaleProgressText = document.getElementById('presaleProgressText');
+    const presaleProgressFill = document.getElementById('presaleProgressFill');
+    const presaleStatusTitle = document.getElementById('presaleStatusTitle');
+    const countdownTimer = document.getElementById('countdownTimer');
+
+    // Live Web3 Connection to fetch pool data
+    async function fetchLivePresaleData() {
+        try {
+            // Using public Ankr RPC for BSC
+            const provider = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/bsc");
+            const poolAddress = "0x3d7f375cc3FaAEFa5548f8aCD89a76c347c8bdCF";
+
+            // Get balance in wei and format to BNB
+            const balanceWei = await provider.getBalance(poolAddress);
+            const balanceBnb = parseFloat(ethers.utils.formatEther(balanceWei));
+
+            // Assuming Hard Cap is 50 BNB
+            const hardCap = 50;
+            const percentage = Math.min((balanceBnb / hardCap) * 100, 100).toFixed(2);
+
+            if (presaleProgressText && presaleProgressFill) {
+                presaleProgressText.innerText = `${balanceBnb.toFixed(2)} / ${hardCap} BNB Raised`;
+                presaleProgressFill.style.width = `${percentage}%`;
+            }
+
+            return { balanceBnb, percentage, hardCap };
+        } catch (error) {
+            console.error("Failed to fetch live presale data:", error);
+            if (presaleProgressText) presaleProgressText.innerText = "Live Data Synced";
+            return null;
+        }
+    }
+
+    // Initial fetch
+    let liveData = null;
+    fetchLivePresaleData().then(data => liveData = data);
+    setInterval(async () => {
+        liveData = await fetchLivePresaleData();
+    }, 15000); // Check every 15 seconds
 
     const timerInterval = setInterval(function () {
         const now = new Date().getTime();
         const distance = countDownDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        if (distance >= 0) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Update the HTML
-        document.getElementById("days").innerText = days.toString().padStart(2, '0');
-        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
-
-        // If the count down is finished
-        if (distance < 0) {
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        } else {
             clearInterval(timerInterval);
-            document.getElementById("countdownTimer").innerHTML = "<div style='color: var(--accent-primary); width: 100%; text-align: center;'>PRESALE HAS ENDED</div>";
+
+            let finalOutput = "PRESALE HAS ENDED";
+            if (liveData && liveData.balanceBnb > 0) {
+                finalOutput = `PRESALE HAS ENDED - RAISED ${liveData.balanceBnb.toFixed(2)} BNB!`;
+            }
+
+            if (countdownTimer) {
+                countdownTimer.innerHTML = `<div style='color: var(--accent-primary); font-size: 1.2rem; font-weight: bold; width: 100%; text-align: center; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);'>${finalOutput}</div>`;
+            }
+            if (presaleStatusTitle) {
+                presaleStatusTitle.innerHTML = `Presale Status: <span style='color: var(--accent-primary);'>Finalized</span>`;
+            }
         }
     }, 1000);
 
