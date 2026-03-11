@@ -80,16 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             clearInterval(timerInterval);
 
-            let finalOutput = "PRESALE HAS ENDED";
-            if (liveData && liveData.balanceBnb > 0) {
-                finalOutput = `PRESALE HAS ENDED - RAISED ${liveData.balanceBnb.toFixed(2)} BNB!`;
+            let finalOutput = "🔥 PRESALE IS LIVE ON PINKSALE! 🔥";
+            if (liveData && liveData.balanceBnb >= 0) {
+                finalOutput = `LIVE NOW - RAISED ${liveData.balanceBnb.toFixed(2)} BNB!`;
             }
 
             if (countdownTimer) {
-                countdownTimer.innerHTML = `<div style='color: var(--accent-primary); font-size: 1.2rem; font-weight: bold; width: 100%; text-align: center; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);'>${finalOutput}</div>`;
+                countdownTimer.innerHTML = `<div style='color: var(--accent-primary); font-size: 1.2rem; font-weight: bold; width: 100%; text-align: center; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5); margin-top: 10px;'>${finalOutput}</div>`;
             }
             if (presaleStatusTitle) {
-                presaleStatusTitle.innerHTML = `Presale Status: <span style='color: var(--accent-primary);'>Finalized</span>`;
+                presaleStatusTitle.innerHTML = `Presale <span class="live-ping"></span> <span style='color: var(--accent-primary);'>LIVE</span>`;
             }
         }
     }, 1000);
